@@ -1,0 +1,293 @@
+/* ============================================
+   TREASURE HUNT - FIRST CLUE
+   Elegant, romantic aesthetic
+   ============================================ */
+
+:root {
+    /* Warm Neutral Palette */
+    --bg-cream: #FDF8F5;
+    --bg-blush: #FBF0ED;
+    --accent-rose: #E8A5A5;
+    --accent-coral: #D4847C;
+    --accent-deep: #C26E6E;
+
+    /* Text */
+    --text-dark: #3D2E2E;
+    --text-medium: #6B5858;
+    --text-soft: #9A8585;
+    --text-light: #C5B5B5;
+
+    /* Effects */
+    --shadow-soft: 0 4px 24px rgba(58, 46, 46, 0.06);
+    --shadow-lift: 0 8px 40px rgba(58, 46, 46, 0.08);
+    --glow-rose: 0 0 60px rgba(232, 165, 165, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+body {
+    font-family: 'Instrument Sans', -apple-system, sans-serif;
+    background: var(--bg-cream);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    color: var(--text-dark);
+    position: relative;
+}
+
+/* ============================================
+   SCREEN SYSTEM
+   ============================================ */
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    padding: 1.5rem;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+}
+
+.center-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================================
+   WELCOME SCREEN
+   ============================================ */
+
+.treasure-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.treasure-icon {
+    font-size: 2.5rem;
+    color: var(--accent-rose);
+    margin-bottom: 1.5rem;
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.main-headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.main-headline .line {
+    display: block;
+}
+
+.main-headline .accent {
+    font-style: italic;
+    color: var(--accent-deep);
+}
+
+.soft-text {
+    color: var(--text-soft);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-rose) 0%, var(--accent-coral) 100%);
+    color: white;
+    box-shadow: var(--shadow-soft), var(--glow-rose);
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift), 0 0 80px rgba(232, 165, 165, 0.4);
+}
+
+.btn-glow {
+    animation: softGlow 3s ease-in-out infinite;
+}
+
+@keyframes softGlow {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-soft), 0 0 20px rgba(232, 165, 165, 0.2);
+    }
+
+    50% {
+        box-shadow: var(--shadow-lift), 0 0 35px rgba(232, 165, 165, 0.35);
+    }
+}
+
+/* ============================================
+   CLUE CARD
+   ============================================ */
+
+.clue-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-lift);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    max-width: 400px;
+    width: 100%;
+}
+
+.clue-number {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-coral);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.clue-content {
+    margin-bottom: 1.5rem;
+}
+
+.clue-line {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+    margin-bottom: 0.25rem;
+}
+
+.clue-line.highlight {
+    color: var(--accent-deep);
+    font-weight: 500;
+}
+
+.clue-line.accent {
+    color: var(--accent-coral);
+    font-style: italic;
+    font-size: 1.35rem;
+    margin-top: 0.5rem;
+}
+
+.clue-line.spacer {
+    height: 1rem;
+}
+
+.clue-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg-blush);
+}
+
+.hint {
+    font-size: 1.5rem;
+    color: var(--accent-rose);
+    opacity: 0.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 1.25rem;
+    }
+
+    .clue-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .clue-line {
+        font-size: 1.1rem;
+    }
+
+    .main-headline {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+}
+
+/* Safe area for notched phones */
+@supports (padding: max(0px)) {
+    .screen {
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    }
+}

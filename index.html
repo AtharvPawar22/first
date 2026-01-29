@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Treasure Hunt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Screen 1: Welcome -->
+    <section class="screen active" id="screen0">
+        <div class="content-wrapper center-mode">
+            <div class="treasure-intro">
+                <div class="treasure-icon">✦</div>
+                <span class="eyebrow">welcome to</span>
+                <h1 class="main-headline">
+                    <span class="line">Treasure</span>
+                    <span class="line accent">Hunt</span>
+                </h1>
+                <p class="soft-text">A journey of clues, just for you</p>
+
+                <button class="btn btn-primary btn-glow" id="startBtn">
+                    <span>Click here for first clue</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 2: First Clue -->
+    <section class="screen" id="screen1">
+        <div class="content-wrapper center-mode">
+            <div class="clue-card">
+                <div class="clue-number">Clue 1</div>
+                <div class="clue-content">
+                    <p class="clue-line">A tiny circle, fresh and bright,</p>
+                    <p class="clue-line">That keeps a smile ready for sight.</p>
+                    <p class="clue-line highlight">Pick one I love, a minty treat,</p>
+                    <p class="clue-line highlight">bring it to me</p>
+                    <p class="clue-line spacer"></p>
+                    <p class="clue-line">Then lets go to where our story took its seat,</p>
+                    <p class="clue-line">Our very first hangout, calm and sweet,</p>
+                    <p class="clue-line">Where I called you my girlfriend,</p>
+                    <p class="clue-line accent">first time complete.</p>
+                </div>
+                <div class="clue-footer">
+                    <span class="hint">♡</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
