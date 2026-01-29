@@ -262,6 +262,122 @@ body {
 }
 
 /* ============================================
+   GHOST BUTTON
+   ============================================ */
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-soft);
+    font-size: 0.85rem;
+    padding: 0.75rem 1.5rem;
+    min-width: auto;
+    border: 1px solid var(--text-light);
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    color: var(--accent-coral);
+    border-color: var(--accent-rose);
+    background: var(--bg-blush);
+}
+
+/* ============================================
+   PASSWORD SCREEN
+   ============================================ */
+
+.lock-icon {
+    font-size: 2rem;
+    color: var(--accent-rose);
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    color: var(--text-medium);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.password-input-wrapper {
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.password-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1rem;
+    border: 2px solid var(--text-light);
+    border-radius: 50px;
+    background: var(--bg-cream);
+    color: var(--text-dark);
+    text-align: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.password-input:focus {
+    border-color: var(--accent-rose);
+    box-shadow: 0 0 20px rgba(232, 165, 165, 0.2);
+}
+
+.password-input::placeholder {
+    color: var(--text-light);
+}
+
+.error-message {
+    color: var(--accent-coral);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   SUCCESS SCREEN
+   ============================================ */
+
+.success-card {
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 3rem;
+    color: var(--accent-rose);
+    margin-bottom: 1rem;
+    animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+.success-message {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--accent-deep);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.success-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg-blush);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 

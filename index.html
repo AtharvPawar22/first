@@ -50,6 +50,44 @@
                     <p class="clue-line accent">first time complete.</p>
                 </div>
                 <div class="clue-footer">
+                    <button class="btn btn-ghost" id="learnMoreBtn">
+                        <span>Learn more</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 3: Password -->
+    <section class="screen" id="screen2">
+        <div class="content-wrapper center-mode">
+            <div class="clue-card">
+                <div class="lock-icon">✧</div>
+                <h2 class="card-title">Almost there...</h2>
+                <p class="card-text">When you get this clue,<br>ask Atharv for the password</p>
+
+                <div class="password-input-wrapper">
+                    <input type="text" id="passwordInput" class="password-input" placeholder="Enter password"
+                        autocomplete="off" autocapitalize="off">
+                </div>
+
+                <p class="error-message" id="errorMessage">That's not it, try again</p>
+
+                <button class="btn btn-primary" id="submitPasswordBtn">
+                    <span>Unlock</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 4: Success -->
+    <section class="screen" id="screen3">
+        <div class="content-wrapper center-mode">
+            <div class="clue-card success-card">
+                <div class="success-icon">♡</div>
+                <h2 class="card-title">Next step</h2>
+                <p class="success-message">Share a single meal<br>to get the next clue</p>
+                <div class="success-footer">
                     <span class="hint">♡</span>
                 </div>
             </div>
